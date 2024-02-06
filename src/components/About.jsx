@@ -78,7 +78,7 @@ export default function About() {
                 src={slick}
               ></video>
             </span>{" "}
-            user interfaces. I use React.js to consume{" "}
+            user interfaces with skills in JavaScript Framework
             <span>
               <video
                 className=" inline w-[15%] md:w-[4%]   object-cover mx-0 border   rounded-full"
@@ -89,9 +89,10 @@ export default function About() {
                 src={comsume}
               ></video>
             </span>{" "}
-            APIs and build scalable applications. In terms of technologies, I
-            use React, TailwindCSS, GSAP,Sanity, SaSS, Figma, Adobe Illustrator,
-            Adobe Photoshop and Github. <br />
+            and build scalable applications. In terms of technologies, I am
+            proficient in React.js, TailwindCSS, Bootstrap, Node.js, Framer
+            Motion, GSAP, Sass, Figma, Adobe Illustrator, Adobe Photoshop and
+            Github. <br />
             As a Front-End Developer, I have sharpen my skills in front-end
             development which includes implementing responsive designs, Search
             Engine Optimization(SEO){" "}

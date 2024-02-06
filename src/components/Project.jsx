@@ -46,7 +46,7 @@ export default function Project({ project }) {
         <a target="_blank" href={link}>
           <img
             ref={img}
-            className=" absolute object-cover w-full h-[200px] md:h-[400px] lg:h-[700px] hover:animate-pulse  duration-700 "
+            className=" absolute object-cover object-top w-full h-[200px] md:h-[400px] lg:h-[700px] hover:animate-pulse  duration-700 "
             src={image}
             alt={name}
           />

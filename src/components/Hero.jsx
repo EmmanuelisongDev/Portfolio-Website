@@ -2,12 +2,13 @@ import gsap from "gsap/gsap-core";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
-import { RiArrowDropDownFill } from "react-icons/ri";
 import { HiMiniArrowDown } from "react-icons/hi2";
 export default function Hero() {
   const bigText = useRef();
   const mediumText = useRef();
   const arrow = useRef();
+  const text =
+    "I'm a developer and visual designer based in Nigeria, specializing in crafting stunning websites. With a wealth of experience, I bring a unique blend of technical expertise and design finesse to every project.";
 
   useGSAP(
     () => {
@@ -64,8 +65,6 @@ export default function Hero() {
           <HiMiniArrowDown className=" h-10 w-10  md:h-20 md:w-20 animate-pulse " />
         </span>
         <header className="text-center pt-60 px-[10%] bottom-[30%] ">
-          <h3 className=" text-xl font-bold font-smallHea">hello, I am a </h3>
-
           <h1
             ref={bigText}
             className=" mix-blend-difference font-header z-20 text-4xl text-center font-black md:text-7xl lg:text-9xl  "
@@ -74,9 +73,11 @@ export default function Hero() {
             DEVELOPER
           </h1>
 
-          <p ref={mediumText} className=" mt-14 text-lg md:text-3xl  w-full  ">
-            I AM A DEVELOPER AND VISUAL DESIGNER BASED IN NIGERIA. WITH
-            EXPERIENCE IN REACT. <br /> I LOVE MINIMAL DESIGN.
+          <p
+            ref={mediumText}
+            className=" uppercase mt-14 text-lg md:text-3xl  w-full  "
+          >
+            {text}
           </p>
         </header>
       </main>

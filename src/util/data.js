@@ -2,7 +2,6 @@ import rexaImage from "../assets/projectImage/rexa.png";
 import cokbokImage from "../assets/projectImage/cokbok.png";
 import tetrisImage from "../assets/projectImage/tetris.png";
 import dailybreadImage from "../assets/projectImage/dailybread.png";
-import planetImage from "../assets/projectImage/planet.png";
 import weatherImage from "../assets/projectImage/weather.png";
 
 export const ProjectData = [
@@ -11,9 +10,15 @@ export const ProjectData = [
     name: "REXA",
     type: "Ecommerce Website",
     git: "https://github.com/EmmanuelisongDev/Rexa",
-    link: "https://rexa-ecommerce.netlify.app/",
+    link: "https://rexastudio.netlify.app/",
     image: rexaImage,
-    tools: ["React", "TailwindCSS", "SanityCMS", "Paystack"],
+    tools: [
+      "React",
+      "TailwindCSS",
+      "Redux/Redux Toolkit",
+      "SanityCMS",
+      "Paystack",
+    ],
   },
   {
     id: 2,
@@ -42,15 +47,7 @@ export const ProjectData = [
     image: dailybreadImage,
     tools: ["React", "TailwindCSS"],
   },
-  {
-    id: 5,
-    name: "Planetor",
-    type: "Planet Calculator",
-    git: "https://github.com/EmmanuelisongDev/Planetorz.git",
-    link: "https://planetor.netlify.app/",
-    image: planetImage,
-    tools: ["HTML", "CSS", "Javascript"],
-  },
+
   {
     id: 6,
     name: "WeatherMan",

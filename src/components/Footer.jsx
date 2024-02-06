@@ -1,10 +1,44 @@
+import gsap from "gsap/gsap-core";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import SplitType from "split-type";
+
 export default function Footer() {
+  const bigText = useRef();
+  useGSAP(
+    () => {
+      const big = new SplitType(bigText.current, { types: "chars" });
+      const bigChars = big.chars;
+      gsap.fromTo(
+        bigChars,
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.05,
+          duration: 1,
+          "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: bigChars,
+            start: "top 80%",
+
+            toggleActions: "play none none reset",
+          },
+        }
+      );
+    },
+    { scope: bigText }
+  );
   return (
     <footer
       id="contact"
       className=" scroll-smooth border-t pt-40   px-[10%] mt-40"
     >
-      <h1 className=" font-black  text-5xl  lg:text-9xl ">
+      <h1 ref={bigText} className=" font-black  text-5xl  lg:text-9xl ">
         LET'S <br />
         CONNECT
       </h1>
