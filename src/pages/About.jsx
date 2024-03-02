@@ -30,7 +30,7 @@ export default function About() {
     <>
       <section
         ref={reveal}
-        id="about-section"
+        id="about"
         className=" scroll-smooth py-36 text-pretty  px-[10%] uppercase "
       >
         <h1 className=" mix-blend-difference font-header z-20  mt-6 font-black text-2xl md:text-5xl  lg:text-7xl uppercase  ">

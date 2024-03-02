@@ -3,7 +3,10 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { Link } from "react-scroll";
+import { useLocation } from "react-router-dom";
 export default function Footer({ handleToTop }) {
+  let location = useLocation();
+  console.log(location.pathname);
   const bigText = useRef();
   useGSAP(
     () => {
@@ -52,10 +55,14 @@ export default function Footer({ handleToTop }) {
         </button>
       </div>
 
-      <Link onClick={handleToTop} duration={500} smooth={true} to={handleToTop}>
+      <Link
+        duration={500}
+        smooth={true}
+        to={location.pathname == "/" ? `hero` : `about`}
+      >
         <button
           className=" scroll-smooth font-bold   hover:underline "
-          onClick={handleToTop}
+          // onClick={handleToTop}
         >
           BACK TO TOP{" "}
         </button>
