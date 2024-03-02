@@ -9,20 +9,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
- 
-    --height:100%;
-}
-*{
+
+body{
   scroll-behavior: smooth;
 }
-.img-container::after{
-    content: '';
-position:absolute;
-height:   var(--height);
-width:100%;
-top: 0;
-right: 0;
-background-color: black;
-
-} 
+*{
+  color: #0505af;
+}

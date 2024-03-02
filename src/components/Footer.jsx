@@ -2,8 +2,8 @@ import gsap from "gsap/gsap-core";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
-
-export default function Footer() {
+import { Link } from "react-scroll";
+export default function Footer({ handleToTop }) {
   const bigText = useRef();
   useGSAP(
     () => {
@@ -25,48 +25,75 @@ export default function Footer() {
           scrollTrigger: {
             trigger: bigChars,
             start: "top 80%",
-
-            toggleActions: "play none none reset",
+            toggleActions: "play none none ",
           },
         }
       );
     },
     { scope: bigText }
   );
+
   return (
     <footer
       id="contact"
       className=" scroll-smooth border-t pt-40   px-[10%] mt-40"
     >
-      <h1 ref={bigText} className=" font-black  text-5xl  lg:text-9xl ">
-        LET'S <br />
-        CONNECT
-      </h1>
+      <div>
+        <h1
+          ref={bigText}
+          className=" font-black text-5xl md:text-7xl  lg:text-9xl "
+        >
+          LET&apos;S <br />
+          CONNECT
+        </h1>
 
-      <button className="py-4 px-6 hover:animate-pulse hover:bg-white hover:text-black rounded-full my-10 border  ">
-        <a href="mailto:emmisongdev@gmail.com">CONTACT ME</a>
-      </button>
+        <button className="mt-4 border border-[#0505af] text-[#0505af] rounded-full px-4 py-3 transition ease-out duration-300 delay-100 hover:bg-[#0505af] hover:text-white text-lg font-black my-10 ">
+          <a href="mailto:emmisongdev@gmail.com">CONTACT ME</a>
+        </button>
+      </div>
 
+      <Link onClick={handleToTop} duration={500} smooth={true} to={handleToTop}>
+        <button
+          className=" scroll-smooth font-bold   hover:underline "
+          onClick={handleToTop}
+        >
+          BACK TO TOP{" "}
+        </button>
+      </Link>
       <div
         className="flex border-t
-       gap-3 py-5 text-xs md:text-lg  "
+       gap-1 py-5 text-xs md:text-lg  font-bold "
       >
-        <button>
-          <a target="_blank" href="https://github.com/EmmanuelisongDev">
+        <button className="hover:underline">
+          <a
+            target="_blank"
+            href="https://github.com/EmmanuelisongDev"
+            rel="noreferrer"
+          >
             GITHUB
           </a>
         </button>
-        <button>
-          <a target="_blank" href="http://x.com/emmisongdev">
+        <button className="hover:underline">
+          <a target="_blank" href="http://x.com/emmisongdev" rel="noreferrer">
             X(TWITTER)
           </a>
         </button>
-        <button>
+        <button className="hover:underline">
           <a
             target="_blank"
             href="http://www.linkedin.com/in/emmanuel-isong-086b19208"
+            rel="noreferrer"
           >
             LINKEDIN
+          </a>
+        </button>
+        <button className="hover:underline">
+          <a
+            target="_blank"
+            href="https://emmisongdev.hashnode.dev/"
+            rel="noreferrer"
+          >
+            HASHNODE
           </a>
         </button>
       </div>

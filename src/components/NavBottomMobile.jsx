@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-import { HashLink } from "react-router-hash-link";
-export default function NavBottomMobile() {
+import { Link as SmoothLink } from "react-scroll";
+import { Link } from "react-router-dom";
+export default function NavBottomMobile({ handleToTop }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -29,14 +30,23 @@ export default function NavBottomMobile() {
       <ul
         className={` text-xs  gap-1 md:hidden  backdrop-blur-xl  border  p-1 rounded-full font-extrabold   z-50 flex  relative   `}
       >
-        <li className="uppercase  cursor-pointer hover:line-through ">
-          <HashLink to={"#projects"}> Project</HashLink>
+        <li className="uppercase  cursor-pointer hover:underline">
+          <Link onClick={handleToTop} to={"/"}>
+            {" "}
+            Home{" "}
+          </Link>
         </li>
-        <li className="uppercase  cursor-pointer hover:line-through">
-          <HashLink to={"#about-section"}> About </HashLink>
+        <li className="uppercase  cursor-pointer hover:underline">
+          <Link onClick={handleToTop} to={"/about"}>
+            {" "}
+            About{" "}
+          </Link>
         </li>
-        <li className="uppercase  cursor-pointer hover:line-through">
-          <HashLink to={"#contact"}> Contact</HashLink>
+        <li className="uppercase  cursor-pointer hover:underline ">
+          <SmoothLink smooth={true} to="contact">
+            {" "}
+            Contact
+          </SmoothLink>
         </li>
       </ul>
     </div>

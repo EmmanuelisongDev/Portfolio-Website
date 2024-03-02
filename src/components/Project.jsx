@@ -7,69 +7,52 @@ import { CSSRulePlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 
 export default function Project({ project }) {
-  const { id, name, type, git, link, image, tools } = project;
-  const container = useRef(null);
-  const img = useRef(null);
+  const { id, name, type, about, git, link, image } = project;
+  const work = useRef();
 
   useGSAP(
     () => {
-      const imageReveal = document.querySelectorAll(".img-container");
-      imageReveal.forEach((e) => {
-        gsap.to(e, {
-          "--height": "0%",
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: e,
-
-            start: "0% bottom",
-            toggleActions: "play none none reverse",
-          },
-        });
-      });
-      gsap.from(img.current, {
-        scale: 0.5,
-        ease: "power2.inOut",
-        delay: -1.4,
+      gsap.to(work.current, {
+        y: -100,
+        filter: "grayscale(0)",
+        duration: 2,
+        scrollTrigger: {
+          trigger: work.current,
+          start: "bottom bottom",
+          scrub: true,
+          toggleActions: "play none none reset",
+        },
       });
     },
-    { scope: container }
+    { scope: work }
   );
+
   return (
     <div
+      ref={work}
       className={` flex  flex-col
            mb-20 lg:items-center w-full  lg:justify-between`}
     >
-      <div
-        ref={container}
-        className=" img-container  relative  w-full h-[200px] md:h-[400px] lg:h-[700px]   overflow-hidden "
-      >
-        <a target="_blank" href={link}>
-          <img
-            ref={img}
-            className=" absolute object-cover object-top w-full h-[200px] md:h-[400px] lg:h-[700px] hover:animate-pulse  duration-700 "
-            src={image}
-            alt={name}
-          />
-        </a>
+      <div className=" rounded-md   relative  w-full h-[200px] md:h-[400px] lg:h-[700px]    ">
+        <img
+          className="  rounded-md object-cover object-top  w-full
+           h-[200px] md:h-[400px] lg:h-[700px] grayscale hover:grayscale-0 duration-700 border "
+          src={image}
+          alt={name}
+        />
       </div>
 
-      <div className={` w-full`}>
-        <a target="_blank" href={link}>
-          <h1 className="text-xl md:text-5xl xl:text-8xl font-bold mb-1">
-            {name}
-          </h1>
+      <div className={` w-full capitalize`}>
+        <h1 className="text-xl text-left mt-4 md:text-5xl xl:text-8xl  mb-1 capitalize font-black ">
+          {name}
+        </h1>
+        <h3 className=" text-lg font-medium md:text-3xl">{type}</h3>
+        <p className="text-xs md:text-xl my-1 text-pretty">{about}</p>
+        <a href={link} target="_blank" rel="noreferrer">
+          <button className=" mt-4 border-[#0505af] border   rounded-full px-4 py-3 transition ease-out duration-300 delay-100 hover:bg-[#0505af] hover:text-white text-lg font-bold text-[#0505af]">
+            VISIT SITE
+          </button>
         </a>
-        <h3 className=" text-sm md:text-3xl">{type}</h3>
-
-        <span className={` w-full mt-1  flex flex-wrap  gap-1 `}>
-          {tools.map((tool, id) => {
-            return (
-              <p className="text-xs text-left " key={id}>
-                {tool}
-              </p>
-            );
-          })}
-        </span>
       </div>
     </div>
   );

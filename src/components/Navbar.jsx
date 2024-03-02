@@ -1,31 +1,41 @@
 import NavContainer from "./NavContainer";
-import { HashLink } from "react-router-hash-link";
-
-export default function Navbar() {
+import { Link as SmoothLink } from "react-scroll";
+import { Link } from "react-router-dom";
+export default function Navbar({ handleToTop }) {
   return (
     <>
       <NavContainer>
-        <nav className="flex items-center justify-between px-7  py-3 w-full">
+        <nav className="flex items-center justify-between p-10 mix-blend-difference   w-full  text-[#0505af]">
           <div>
-            <label className=" z-[70] mix-blend-darken font-black uppercase  ">
-              Emmanuel Isong
-            </label>
+            <Link onClick={handleToTop} to="/">
+              <label className=" cursor-pointer z-[70] hover:underline text-sm md:text-lg   font-black uppercase  ">
+                Emmanuel Isong
+              </label>
+            </Link>
           </div>
 
           <div className="">
             <ul
-              className={`  gap-1 hidden font-extrabold   z-50 md:flex  relative  text-xs `}
+              className={`  gap-1 hidden font-medium   z-50 md:flex  relative  text-sm md:text-lg `}
             >
-              <li className="uppercase  cursor-pointer hover:line-through ">
-                <HashLink to={"#projects"}> Project</HashLink>
+              <li className="uppercase  cursor-pointer hover:underline ">
+                <Link onClick={handleToTop} to={"/"}>
+                  {" "}
+                  Home{" "}
+                </Link>
+              </li>
+              <li className="uppercase  cursor-pointer hover:underline ">
+                <Link onClick={handleToTop} to={"/about"}>
+                  {" "}
+                  About{" "}
+                </Link>
               </li>
 
-              <li className="uppercase  cursor-pointer hover:line-through ">
-                <HashLink to={"#about-section"}> About </HashLink>
-              </li>
-
-              <li className="uppercase  cursor-pointer hover:line-through ">
-                <HashLink to={"#contact"}> Contact</HashLink>
+              <li className="uppercase  cursor-pointer hover:underline ">
+                <SmoothLink smooth={true} to="contact">
+                  {" "}
+                  Contact
+                </SmoothLink>
               </li>
             </ul>
           </div>

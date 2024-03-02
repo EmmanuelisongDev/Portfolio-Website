@@ -1,23 +1,20 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import Ball from "./components/Ball";
-import NavBottomMobile from "./components/NavBottomMobile";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home, About, ErrorPage } from "./pages";
+import Layout from "./Layout";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
 
+    children: [
+      { index: true, element: <Home /> },
+      { path: "/about", element: <About /> },
+    ],
+  },
+]);
 function App() {
-  return (
-    <div className=" scroll-smooth font-header ">
-      <Ball />
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Footer />
-      <NavBottomMobile />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -16,8 +16,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^6.21.1",
-    "react-router-hash-link": "^2.4.3",
+    "react-router-dom": "^6.22.2",
+    "react-scroll": "^1.9.0",
     "smooth-scrollbar": "^8.8.4",
     "split-text": "^1.0.0",
     "split-type": "^0.3.4"

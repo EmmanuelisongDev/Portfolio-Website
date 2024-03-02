@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { HiMiniArrowDown } from "react-icons/hi2";
+import { Link } from "react-scroll";
 export default function Hero() {
   const bigText = useRef();
   const mediumText = useRef();
@@ -28,7 +29,7 @@ export default function Hero() {
           "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
           ease: "power4.out",
           scrollTrigger: {
-            trigger: bigChars,
+            trigger: bigChars.current,
             start: "top 80%",
 
             toggleActions: "play none none reset",
@@ -47,11 +48,12 @@ export default function Hero() {
         },
       });
       gsap.to(arrow.current, {
-        y: 50,
+        y: 100,
         duration: 2,
         scrollTrigger: {
           trigger: arrow.current,
           start: "bottom bottom",
+          scrub: true,
           toggleActions: "play none none reset",
         },
       });
@@ -60,10 +62,15 @@ export default function Hero() {
   );
   return (
     <>
-      <main className=" h-screen  scroll-smooth  align-middle w-full relative ">
-        <span ref={arrow} className="absolute bottom-0 right-0 ">
-          <HiMiniArrowDown className=" h-10 w-10  md:h-20 md:w-20 animate-pulse " />
-        </span>
+      <main
+        id="hero"
+        className=" h-screen  scroll-smooth  align-middle w-full relative "
+      >
+        <Link to="featured" smooth={true}>
+          <span ref={arrow} className="absolute bottom-0 right-0 ">
+            <HiMiniArrowDown className=" h-10 w-10  md:h-20 md:w-20 animate-pulse " />
+          </span>
+        </Link>
         <header className="text-center pt-60 px-[10%] bottom-[30%] ">
           <h1
             ref={bigText}
