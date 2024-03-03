@@ -62,7 +62,7 @@ export default function Footer({ handleToTop }) {
       >
         <button
           className=" scroll-smooth font-bold   hover:underline "
-          // onClick={handleToTop}
+         
         >
           BACK TO TOP{" "}
         </button>

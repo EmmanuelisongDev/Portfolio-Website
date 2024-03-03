@@ -28,7 +28,7 @@ export default function NavBottomMobile({ handleToTop }) {
       } transition-transform duration-300 ease-in-out z-50`}
     >
       <ul
-        className={` text-xs  gap-1 md:hidden  backdrop-blur-xl  border  p-1 rounded-full font-extrabold   z-50 flex  relative   `}
+        className={` text-xs bg-white  gap-1 md:hidden  backdrop-blur-xl  border  p-1 rounded-full font-extrabold   z-50 flex  relative   `}
       >
         <li className="uppercase  cursor-pointer hover:underline">
           <Link onClick={handleToTop} to={"/"}>
