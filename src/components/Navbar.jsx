@@ -5,7 +5,7 @@ export default function Navbar({ handleToTop }) {
   return (
     <>
       <NavContainer>
-        <nav className="flex items-center justify-between shadow-sm p-6 mix-blend-difference  bg-white  w-full  text-[#0505af]">
+        <nav className="flex items-center justify-between  p-6 mix-blend-difference  bg-white  w-full  text-[#0505af]">
           <div>
             <Link onClick={handleToTop} to="/">
               <label className=" cursor-pointer z-[70]  hover:underline text-sm md:text-lg   font-black uppercase  ">
