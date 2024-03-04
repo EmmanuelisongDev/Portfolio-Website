@@ -60,10 +60,7 @@ export default function Footer({ handleToTop }) {
         smooth={true}
         to={location.pathname == "/" ? `hero` : `about`}
       >
-        <button
-          className=" scroll-smooth font-bold   hover:underline "
-         
-        >
+        <button className=" scroll-smooth font-bold   hover:underline ">
           BACK TO TOP{" "}
         </button>
       </Link>
@@ -94,7 +91,7 @@ export default function Footer({ handleToTop }) {
             LINKEDIN
           </a>
         </button>
-        <button className="hover:underline">
+        {/* <button className="hover:underline">
           <a
             target="_blank"
             href="https://emmisongdev.hashnode.dev/"
@@ -102,7 +99,7 @@ export default function Footer({ handleToTop }) {
           >
             HASHNODE
           </a>
-        </button>
+        </button> */}
       </div>
     </footer>
   );
